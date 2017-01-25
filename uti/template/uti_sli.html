@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SHIPPER'S LETTER OF INSTRUCTIONS (SLI)</title>
+</head>
+<body>
+
+<style type="text/css">
+
+    table {
+        page-break-inside: auto;
+    }
+
+    tbody {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        font-size: 16px;
+        font-weight: bold;
+        border: solid 1px #666666;
+        overflow: inherit;
+        word-break: normal;
+        color: #333;
+        text-align: center;
+    }
+
+    td {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        overflow: inherit;
+        word-break: normal;
+        color: #333;
+        background-color: #fff;
+        border: solid 1px #666666;
+        width: auto;
+    }
+
+    .fieldDescription {
+        background-color: #d1e8f6;
+        vertical-align: top;
+        text-align: left;
+    }
+
+    .fieldData {
+        vertical-align: top;
+        text-align: center;
+    }
+
+    .fieldDataLeft {
+        vertical-align: top;
+        text-align: left;
+    }
+
+    .rules {
+        font-size: 8px;
+    }
+
+    .border-top {
+        border-top: 2px; !important;
+        border-top-color: #303030; !important;
+        border-top-style: solid; !important;
+    }
+
+    .border-bottom {
+        border-bottom: 2px; !important;
+        border-bottom-color: #303030; !important;
+        border-bottom-style: solid; !important;
+    }
+
+    .border-left {
+        border-left: 2px; !important;
+        border-left-color: #303030; !important;
+        border-left-style: solid; !important;
+    }
+
+    .border-right {
+        border-right: 2px; !important;
+        border-right-color: #303030; !important;
+        border-right-style: solid; !important;
+    }
+
+</style>
+
+{{init}}
+
+<div>
+    <table style="">
+        <colgroup>
+            <col style="">
+            <col style="">
+            <col style="">
+            <col style="">
+            <col style="">
+            <col style="">
+            <col style="">
+            <col style="">
+            <col style="">
+            <col style="">
+            <col style="">
+            <col style="">
+            <col style="">
+            <col style="">
+            <col style="">
+        </colgroup>
+        <tr>
+            <th colspan="15">UTi - SHIPPER'S LETTER OF INSTRUCTIONS (SLI)</th>
+        </tr>
+        <tr>
+            <td colspan="5" class="fieldDescription border-top border-left border-right">1. Shipper / USPPI Name:</td>
+            <td colspan="5" class="fieldDescription border-top border-left border-right">4. Mode of Transport:</td>
+            <td colspan="5" class="fieldDescription border-top border-left border-right">6. Forwarding Agent:</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="fieldDataLeft border-bottom border-left border-right">{{addresses.USPPI.company}}</td>
+            <td colspan="5" class="fieldDataLeft border-bottom border-left border-right">{{additionalInfo.transportMode}}</td>
+            <td colspan="5" class="fieldDataLeft border-bottom border-left border-right">{{additionalInfo.forwardingAgent}}</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="fieldDescription border-top border-left border-right">2. USPPI Address Including Zip Code:</td>
+            <td colspan="2" class="fieldDescription border-top border-left border-bottom">5. Service:</td>
+            <td colspan="3" class="fieldDataLeft border-top border-bottom border-right">{{additionalInfo.service}}</td>
+            <td colspan="5" class="fieldDescription border-top border-left border-right">7. Freight Terms:</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="fieldDataLeft border-left border-right">{{addresses.USPPI.houseNo}}, {{addresses.USPPI.streetName}}</td>
+            <td colspan="5" rowspan="2" class="fieldDataLeft">Ocean Freight Forwarding Service:{{additionalInfo.oceanFreightForwardingService}}</td>
+            <td colspan="5" class="fieldDataLeft border-bottom border-left border-right">{{additionalInfo.freightTerms}}</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="fieldDataLeft border-left border-right">{{addresses.USPPI.city}}</td>
+            <td colspan="5" class="fieldDescription border-top border-left border-right">8. INCOTERMS:</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="fieldDataLeft border-left border-right">{{addresses.USPPI.countryCode}} {{addresses.USPPI.postcode}} {{addresses.USPPI.state}}</td>
+            <td colspan="5" rowspan="2" class="fieldDataLeft border-top">Air Service Level: {{additionalInfo.airServiceLevel}}</td>
+            <td colspan="5" class="fieldDataLeft border-left border-right">{{additionalInfo.incoterms}}</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">3. USPPI EIN (IRS) Number:</td>
+            <td colspan="2" class="fieldDataLeft border-top border-right border-bottom">{{addresses.USPPI.IRSNumber}}</td>
+            <td colspan="5" class="fieldDataLeft border-bottom border-left border-right"></td>
+        </tr>
+        <tr>
+            <td colspan="5" class="fieldDescription border-top border-left border-right">9. Ultimate Consignee Name and Address:</td>
+            <td colspan="5" class="fieldDescription border-top border-left border-right">10. Ultimate Consignee Type:</td>
+            <td colspan="5" class="fieldDescription border-top border-left border-right">11. Intermediate Consignee Name & Address:</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="fieldDataLeft border-left border-right">{{addresses.ultimateConsignee.company}}</td>
+            <td colspan="5" rowspan="4" class="fieldDataLeft border-left border-right">{{additionalInfo.ultimateConsigneeType}}</td>
+            <td colspan="5" class="fieldDataLeft border-left border-right">{{addresses.intermediateConsignee.company}}</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="fieldDataLeft border-left border-right">{{addresses.ultimateConsignee.houseNo}}, {{addresses.ultimateConsignee.streetName}}</td>
+            <td colspan="5" class="fieldDataLeft border-left border-right">{{addresses.intermediateConsignee.houseNo}}, {{addresses.intermediateConsignee.streetName}}</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="fieldDataLeft border-left border-right">{{addresses.ultimateConsignee.city}}</td>
+            <td colspan="5" class="fieldDataLeft border-left border-right"> {{addresses.intermediateConsignee.city}}</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="fieldDataLeft border-left border-right">{{addresses.ultimateConsignee.postcode}}</td>
+            <td colspan="5" class="fieldDataLeft border-left border-right border-bottom">{{addresses.intermediateConsignee.postcode}}</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="fieldDataLeft border-left border-right border-bottom">{{addresses.ultimateConsignee.country}}</td>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">12. State of Origin:</td>
+            <td colspan="2" class="fieldDataLeft border-bottom border-right">{{additionalInfo.stateOfOrigin}}</td>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">13. In-Bond Code:</td>
+            <td colspan="2" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.inBondCode}}</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">14. USPPI Reference#:</td>
+            <td colspan="2" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.USPPIReference}}</td>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">15. Country of Ultimate Destination:</td>
+            <td colspan="2" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.countryOfUltimateDestination}}</td>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">16. Entry Number:</td>
+            <td colspan="2" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.entryNumber}}</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">17. Routed Transaction:</td>
+            <td colspan="2" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.routedTransaction}}</td>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">18. Hazardous Material:</td>
+            <td colspan="2" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.hazardousMaterial}}</td>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">19. FTZ Identifier:</td>
+            <td colspan="2" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.ftzIdentifier}}</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">20. Related Party Indicator:</td>
+            <td colspan="4" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.relatedPartyIndicator}}</td>
+            <td colspan="3" class="fieldDataLeft"></td>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">21. TIB / Temporary Export / Carnet?</td>
+            <td colspan="2" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.tib_temporaryExport_carnet}}</td>
+        </tr>
+        <tr>
+            <td colspan="15" class="fieldDataLeft border-top border-left border-right border-bottom">INSTRUCTIONS TO FORWARDER:<br>{{additionalInfo.instructionsToForwarder}}</td>
+        </tr>
+        <tr>
+            <td class="fieldDescription rules border-top border-left">22. Domestic or Foreign Origin (D/F)</td>
+            <td colspan="3" class="fieldDescription rules border-top">23. Schedule B / HTSUS Number and Commercial Commodity Description (For Vehicles: VIN/Year, make, Model and Vehicle Title Number are required)</td>
+            <td class="fieldDescription rules border-top">24. Quantity in Schedule B/ HTS Units</td>
+            <td class="fieldDescription rules border-top">25. DDTC Quantity and DDTC Unit of Measure</td>
+            <td class="fieldDescription rules border-top">26. Shipping Weight (in kgs)</td>
+            <td class="fieldDescription rules border-top">27. ECCN or USML Category No.</td>
+            <td class="fieldDescription rules border-top">28. SME Indicator (Yes or No)(Applies to DDTC only)</td>
+            <td colspan="2" class="fieldDescription rules border-top">29. Export License Number, License Exception Symbol, DDTC Exemption Number, DDTC ACM No. or NLR</td>
+            <td colspan="2" class="fieldDescription rules border-top">30. Value at the Port of Export (US Dollars)</td>
+            <td colspan="2" class="fieldDescription rules border-top border-right">31. License Value by Item (if applicable)(US Dollars)</td>
+        </tr>
+        {{#each lineItems}}
+        <tr>
+            <td class="fieldData border-left"> </td>
+            <td colspan="3" class="fieldDataLeft">{{shortDescription}}, HS Code {{hsCode}}</td>
+            <td class="fieldData">{{quantity}}</td>
+            <td class="fieldData">{{weightScale}}</td>
+            <td class="fieldData">{{weight}}</td>
+            <td class="fieldData"></td>
+            <td class="fieldData">{{smeIndicator}}</td>
+            <td colspan="2" class="fieldData"></td>
+            <td colspan="2" class="fieldData">&#36;{{price}}</td>
+            <td colspan="2" class="fieldData border-right"></td>
+        </tr>
+        {{/each}}
+        <tr>
+            <td colspan="4" class="fieldDescription border-top border-left border-bottom">32. DDTC Applicant Registration Number:</td>
+            <td colspan="4" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.ddtcApplicantRegistrationNumber}}</td>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">33. Eligible Party Certification:</td>
+            <td colspan="4" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.eligiblePartyCertification}}</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="fieldDescription border-top border-left border-bottom">34. Insurance Requested?</td>
+            <td colspan="2" class="fieldDataLeft border-top border-bottom">{{additionalInfo.InsuranceRequested}}</td>
+            <td colspan="2" class="fieldDataLeft border-top border-right border-bottom">&#36;{{additionalInfo.InsuranceRequestedValue}}</td>
+            <td colspan="6" class="fieldDescription border-top border-left border-bottom">35. Declared Value for Carriage:</td>
+            <td colspan="2" class="fieldDataLeft border-top border-right border-bottom">&#36;{{additionalInfo.declaredValueForCarriage}}</td>
+        </tr>
+        <tr>
+            <td colspan="15" class="rules border-top border-left border-right border-bottom">36. By Signing this document, the USPPI authorizes UTi, United States, Inc. to act on behalf of said USPPI as its true and lawful agent for purposes of creating and filing Electronic Export Information in accordance with the laws and regulations of the United States.</td>
+        </tr>
+        <tr>
+            <td colspan="15" class="rules border-top border-left border-right border-bottom">37. All services provided by UTi's are subject to UTI's standard terms and conditions of trading, a copy of which can be obtained at www.go2uti.com. By Signing this document, the USPPI (shipper) certifies that the statements made and all information contained herein are true and correct. The Shipper understands that civil and criminal penalties, including forfeiture and sale, may be imposed for making false and fraudulent statements herein., failing to provide the requested information or for violation of U.S. laws on exportation (13 U.S.C. Sec .305:  22 U.S.C. Sec. 401, 18 U.S.C. Sec 1001, 50 U.S.C. app. 2410). The Shipper guarantees payment of all collect charges in the event the consignee refuses payment. The Shipper understands that all air shipments are subject to search or inspection and the Shipper consents to cargo screening. All insurance requests are subject to authorization by UTi.</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="fieldDescription border-top border-left border-bottom">38. USPPI Contact Name (First and Last):</td>
+            <td colspan="4" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.USPPIContactName}}</td>
+            <td colspan="2" class="fieldDescription border-top border-left border-bottom">41. Title:</td>
+            <td colspan="5" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.title}}</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="fieldDescription border-top border-left border-bottom">39. Signature:</td>
+            <td colspan="4" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.signature}}</td>
+            <td colspan="2" class="fieldDescription border-top border-left border-bottom">42. Date:</td>
+            <td colspan="5" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.date}}</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="fieldDescription border-top border-left border-bottom">40. USPPI E-mail Address:</td>
+            <td colspan="2" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.USPPIemail}}</td>
+            <td colspan="4" class="fieldDescription border-top border-left border-bottom">43. USPPI Telephone No.:</td>
+            <td colspan="5" class="fieldDataLeft border-top border-right border-bottom">{{additionalInfo.USPPItelephone}}</td>
+        </tr>
+        <tr>
+            <td colspan="15" class="rules">Revision Date: March 25, 2014</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
